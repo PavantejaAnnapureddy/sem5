@@ -38,22 +38,23 @@ Explanation: The substring "eeeee" is of length 5 with the character 'e' only.
 ## Solution
 
 **Language:** Python  
-**Runtime:** 3 ms (beats 81.19%)  
-**Memory:** 19.5 MB (beats 15.34%)  
-**Submitted:** 2026-07-14T10:21:27.850Z  
+**Runtime:** 2 ms (beats 85.79%)  
+**Memory:** 19.3 MB (beats 54.00%)  
+**Submitted:** 2026-07-14T10:25:07.600Z  
 
 ```py
 class Solution:
     def maxPower(self, s: str) -> int:
-        max_count = current_count = 1
+        count = 1  
+        max_count = 1
         
         for i in range(1, len(s)):
             if s[i] == s[i-1]:
-                current_count += 1
-                max_count = max(max_count, current_count)
-            else:
-                current_count = 1
-        
+                count += 1
+            else: 
+                max_count = max(max_count, count)
+                count = 1  
+        max_count = max(max_count, count)
         return max_count
 ```
 

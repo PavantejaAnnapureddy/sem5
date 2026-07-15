@@ -58,7 +58,7 @@ aabb
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-07-15T14:55:58.992Z  
+**Submitted:** 2026-07-15T15:13:18.980Z  
 
 ```py
 t =int(input())

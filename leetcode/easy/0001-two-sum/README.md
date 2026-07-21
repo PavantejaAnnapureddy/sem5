@@ -53,19 +53,29 @@ Output: [0,1]
 ## Solution
 
 **Language:** C++  
-**Runtime:** 43 ms (beats 24.07%)  
-**Memory:** 14.1 MB (beats 69.85%)  
-**Submitted:** 2026-07-21T10:03:32.095Z  
+**Runtime:** 2 ms (beats 72.22%)  
+**Memory:** 16.5 MB (beats 5.29%)  
+**Submitted:** 2026-07-21T10:26:06.599Z  
 
 ```cpp
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
+        // Create complement array
+        vector<int> complements(nums.size());
         for (int i = 0; i < nums.size(); i++) {
-            for (int j = i + 1; j < nums.size(); j++) {
-                if (nums[i] + nums[j] == target) {
-                    return {i, j};
-                }
+            complements[i] = target - nums[i];
+        }
+        
+        // Now we need to find if any nums[i] equals any complements[j]
+        unordered_map<int, int> numMap;
+        for (int i = 0; i < nums.size(); i++) {
+            numMap[nums[i]] = i;
+        }
+        
+        for (int j = 0; j < complements.size(); j++) {
+            if (numMap.find(complements[j]) != numMap.end() && numMap[complements[j]] != j) {
+                return {j, numMap[complements[j]]};
             }
         }
         return {};

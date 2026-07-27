@@ -11,8 +11,6 @@ int main() {
     int n = S.length();
     
     vector<vector<long long>> dp(n, vector<long long>(n, 0));
-    
-    // Base case: single characters
     for (int i = 0; i < n; i++) {
         dp[i][i] = 1;
     }

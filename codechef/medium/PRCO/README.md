@@ -63,17 +63,42 @@ The palindromic subsequences are:
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-07-27T15:27:39.615Z  
+**Submitted:** 2026-07-27T15:29:10.039Z  
 
 ```c_cpp
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <string>
 using namespace std;
 
+const int MOD = 1e9 + 7;
+
 int main() {
-	// your code goes here
-
+    string S;
+    cin >> S;
+    int n = S.length();
+    
+    vector<vector<long long>> dp(n, vector<long long>(n, 0));
+    
+    // Base case: single characters
+    for (int i = 0; i < n; i++) {
+        dp[i][i] = 1;
+    }
+    for (int len = 2; len <= n; len++) {
+        for (int i = 0; i <= n - len; i++) {
+            int j = i + len - 1;
+            
+            if (S[i] == S[j]) {
+                dp[i][j] = (dp[i+1][j] + dp[i][j-1] + 1) % MOD;
+            } else {
+                dp[i][j] = (dp[i+1][j] + dp[i][j-1] - dp[i+1][j-1] + MOD) % MOD;
+            }
+        }
+    }
+    
+    cout << dp[0][n-1] % MOD << endl;
+    return 0;
 }
-
 ```
 
 ---

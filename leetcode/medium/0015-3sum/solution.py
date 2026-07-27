@@ -1,3 +1,5 @@
+import bisect
+
 class Solution:
     def threeSum(self, nums: list[int]) -> list[list[int]]:
         nums.sort()
@@ -5,36 +7,22 @@ class Solution:
         n = len(nums)
         
         for i in range(n - 2):
-            # Skip duplicates for the first element
             if i > 0 and nums[i] == nums[i-1]:
                 continue
             
-            # Optimization: if nums[i] > 0, sum can't be 0
-            if nums[i] > 0:
-                break
-            
-            left = i + 1
-            right = n - 1
-            target = -nums[i]
-            
-            while left < right:
-                current_sum = nums[left] + nums[right]
+            # Binary search optimization for duplicates
+            # If the same value appears many times, we can skip
+            if i > 0 and nums[i] == nums[i-1]:
+                continue
                 
-                if current_sum == target:
-                    result.append([nums[i], nums[left], nums[right]])
-                    
-                    # Skip duplicates for left pointer
-                    while left < right and nums[left] == nums[left + 1]:
-                        left += 1
-                    # Skip duplicates for right pointer
-                    while left < right and nums[right] == nums[right - 1]:
-                        right -= 1
-                    
-                    left += 1
-                    right -= 1
-                elif current_sum < target:
-                    left += 1
-                else:
-                    right -= 1
+            for j in range(i + 1, n - 1):
+                if j > i + 1 and nums[j] == nums[j-1]:
+                    continue
+                
+                target = -(nums[i] + nums[j])
+                # Binary search for target in nums[j+1:]
+                k = bisect.bisect_left(nums, target, j + 1, n)
+                if k < n and nums[k] == target:
+                    result.append([nums[i], nums[j], nums[k]])
         
         return result

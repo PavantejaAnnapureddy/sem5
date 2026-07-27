@@ -44,7 +44,7 @@ Revenue = $5 + 5 = 10$, which is greater than selling the plank as a single piec
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-07-27T15:26:22.631Z  
+**Submitted:** 2026-07-27T15:26:43.387Z  
 
 ```c_cpp
 #include <bits/stdc++.h>

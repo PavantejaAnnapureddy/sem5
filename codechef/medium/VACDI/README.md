@@ -76,7 +76,7 @@ Each assigned vaccine has strictly greater strength than the corresponding patie
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-07-27T15:12:49.623Z  
+**Submitted:** 2026-07-27T15:13:21.677Z  
 
 ```c_cpp
 #include <bits/stdc++.h>

@@ -65,7 +65,7 @@ Remove one of the `2`s to obtain the array `[1, 2, 2, 1]`. Then remove one of th
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-07-27T15:09:58.836Z  
+**Submitted:** 2026-07-27T15:10:21.808Z  
 
 ```c_cpp
 #include <bits/stdc++.h>

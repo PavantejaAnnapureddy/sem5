@@ -76,17 +76,35 @@ Each assigned vaccine has strictly greater strength than the corresponding patie
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-07-27T15:13:21.677Z  
+**Submitted:** 2026-07-27T15:15:27.419Z  
 
 ```c_cpp
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
 int main() {
-	// your code goes here
-
+    int N;
+    cin >> N;
+    
+    vector<int> V(N), P(N);
+    for (int i = 0; i < N; i++) cin >> V[i];
+    for (int i = 0; i < N; i++) cin >> P[i];
+    
+    sort(V.begin(), V.end());
+    sort(P.begin(), P.end());
+    
+    int j = 0;
+    for (int i = 0; i < N && j < N; i++) {
+        if (V[i] > P[j]) {
+            j++; 
+        }
+    }
+    
+    cout << (j == N ? "Yes" : "No") << endl;
+    return 0;
 }
-
 ```
 
 ---

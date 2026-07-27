@@ -56,7 +56,7 @@ Chef already has enough XP to unlock the next level.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-07-27T15:34:08.618Z  
+**Submitted:** 2026-07-27T15:36:00.318Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -65,7 +65,9 @@ using namespace std;
 int main() {
 	// your code goes here
 int x,y;
-cin>>x>>y;
+if (!(cin >> x>> y)) {
+        return 0;
+    }
 if(x>=y){
     cout<<x-y;
     

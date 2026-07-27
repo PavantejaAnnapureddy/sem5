@@ -44,20 +44,34 @@ Revenue = $5 + 5 = 10$, which is greater than selling the plank as a single piec
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-07-27T15:26:43.387Z  
+**Submitted:** 2026-07-27T15:26:51.665Z  
 
 ```c_cpp
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
 int main() {
-	// your code goes here
-int c;
-cin>>c;
-vector<int> v(c);
-
+    int N;
+    cin >> N;
+    
+    vector<int> price(N + 1);
+    for (int i = 1; i <= N; i++) {
+        cin >> price[i];
+    }
+    
+    vector<long long> dp(N + 1, 0);
+    
+    for (int i = 1; i <= N; i++) {
+        for (int j = 1; j <= i; j++) {
+            dp[i] = max(dp[i], price[j] + dp[i - j]);
+        }
+    }
+    
+    cout << dp[N] << endl;
+    return 0;
 }
-
 ```
 
 ---

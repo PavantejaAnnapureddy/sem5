@@ -65,17 +65,32 @@ Remove one of the `2`s to obtain the array `[1, 2, 2, 1]`. Then remove one of th
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-07-27T15:10:21.808Z  
+**Submitted:** 2026-07-27T15:12:04.732Z  
 
 ```c_cpp
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
 int main() {
-	// your code goes here
-
+    int N;
+    cin >> N;
+    
+    vector<int> A(N);
+    for (int i = 0; i < N; i++) {
+        cin >> A[i];
+    }
+    
+    int runs = 1;
+    for (int i = 1; i < N; i++) {
+        if (A[i] != A[i-1]) {
+            runs++;
+        }
+    }
+    
+    cout << runs << endl;
+    return 0;
 }
-
 ```
 
 ---

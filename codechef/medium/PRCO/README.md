@@ -63,7 +63,7 @@ The palindromic subsequences are:
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-07-27T15:29:10.039Z  
+**Submitted:** 2026-07-27T15:29:22.195Z  
 
 ```c_cpp
 #include <iostream>
@@ -79,8 +79,6 @@ int main() {
     int n = S.length();
     
     vector<vector<long long>> dp(n, vector<long long>(n, 0));
-    
-    // Base case: single characters
     for (int i = 0; i < n; i++) {
         dp[i][i] = 1;
     }

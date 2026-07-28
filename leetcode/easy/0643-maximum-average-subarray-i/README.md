@@ -38,9 +38,9 @@ Output: 5.00000
 ## Solution
 
 **Language:** Python  
-**Runtime:** 47 ms (beats 91.62%)  
-**Memory:** 28.9 MB (beats 92.32%)  
-**Submitted:** 2026-07-28T09:51:26.108Z  
+**Runtime:** 67 ms (beats 41.39%)  
+**Memory:** 29.1 MB (beats 48.54%)  
+**Submitted:** 2026-07-28T10:15:48.953Z  
 
 ```py
 class Solution:

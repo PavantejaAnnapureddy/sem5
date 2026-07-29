@@ -65,17 +65,50 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-07-29T16:01:39.843Z  
+**Submitted:** 2026-07-29T16:02:04.195Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-	// your code goes here
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
+    int T;
+    cin >> T;
+
+    while (T--) {
+        int N;
+        cin >> N;
+
+        vector<int> A(N);
+        for (int i = 0; i < N; i++) cin >> A[i];
+
+        vector<pair<int, int>> ord; 
+        for (int i = 0; i < N; i++) {
+            ord.push_back({A[i], i});
+        }
+
+        sort(ord.begin(), ord.end(), [](auto &p, auto &q) {
+            return p.first > q.first; 
+        });
+
+        for (auto [val, idx] : ord) {
+            if (idx == 0 || idx == N - 1) continue;
+            if (A[idx] < A[idx - 1] && A[idx] < A[idx + 1]) {
+                A[idx - 1] = A[idx];
+                A[idx + 1] = A[idx];
+            }
+        }
+
+        long long sum = 0;
+        for (int x : A) sum += x;
+        cout << sum << '\n';
+    }
+
+    return 0;
 }
-
 ```
 
 ---

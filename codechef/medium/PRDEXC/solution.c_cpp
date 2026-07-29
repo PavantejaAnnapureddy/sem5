@@ -2,39 +2,38 @@
 using namespace std;
 
 int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    
     int T;
     cin >> T;
     
     while (T--) {
-        int X, Y, P;
+        long long X, Y, P;
         cin >> X >> Y >> P;
         if (X * Y >= P) {
-            cout << 0 << "\n";
+            cout << 0 << endl;
             continue;
         }
         
         int ans = INT_MAX;
-        for (int incX = 0; incX <= P; incX++) {
-            int newX = X + incX;
-            int neededY = (P + newX - 1) / newX;
-            
-            int incY = max(0, neededY - Y);
-            ans = min(ans, incX + incY);
-            if (incX >= ans) break;
-        }
-        for (int incY = 0; incY <= P; incY++) {
-            int newY = Y + incY;
-            int neededX = (P + newY - 1) / newY;
-            int incX = max(0, neededX - X);
-            ans = min(ans, incX + incY);
-            
-            if (incY >= ans) break;
+        for (int newX = X; newX <= P; newX++) {
+            long long neededY = (P + newX - 1) / newX;  
+            if (neededY < Y) {
+                neededY = Y;
+            }
+            int moves = (newX - X) + (neededY - Y);
+            ans = min(ans, moves);
         }
         
-        cout << ans << "\n";
+        for (int newY = Y; newY <= P; newY++) {
+            long long neededX = (P + newY - 1) / newY;
+            if (neededX < X) {
+                neededX = X;
+            }
+            
+            int moves = (neededX - X) + (newY - Y);
+            ans = min(ans, moves);
+        }
+        
+        cout << ans << endl;
     }
     
     return 0;

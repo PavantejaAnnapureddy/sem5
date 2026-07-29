@@ -6,9 +6,9 @@ int main() {
 int d;
 cin>>d;
 for(int i=0;i<d;i++){
-    int a,s,f;
+    long long a,s,f;
     cin>>a>>s>>f;
-     int x=a/(f-s);
+     long long x=a/(f-s);
     
      if(f==s){
     cout<<"-1"<<endl;

@@ -8,12 +8,17 @@ int main() {
     while (T--) {
         long long X, Y, P;
         cin >> X >> Y >> P;
+        
+        // If already satisfied
         if (X * Y >= P) {
             cout << 0 << endl;
             continue;
         }
         
         int ans = INT_MAX;
+        
+        // Try all possible increments for X and Y
+        // Upper bound: we never need more than P moves (incrementing one variable)
         for (int incX = 0; incX <= P; incX++) {
             for (int incY = 0; incY <= P; incY++) {
                 if ((X + incX) * (Y + incY) >= P) {

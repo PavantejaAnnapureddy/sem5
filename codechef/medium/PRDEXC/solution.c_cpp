@@ -2,6 +2,28 @@
 using namespace std;
 
 int main() {
-	// your code goes here
-
+    int T;
+    cin >> T;
+    
+    while (T--) {
+        long long X, Y, P;
+        cin >> X >> Y >> P;
+        if (X * Y >= P) {
+            cout << 0 << endl;
+            continue;
+        }
+        
+        int ans = INT_MAX;
+        for (int incX = 0; incX <= P; incX++) {
+            for (int incY = 0; incY <= P; incY++) {
+                if ((X + incX) * (Y + incY) >= P) {
+                    ans = min(ans, incX + incY);
+                }
+            }
+        }
+        
+        cout << ans << endl;
+    }
+    
+    return 0;
 }

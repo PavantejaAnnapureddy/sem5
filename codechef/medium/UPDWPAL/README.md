@@ -70,17 +70,65 @@ No
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-07-29T15:15:15.549Z  
+**Submitted:** 2026-07-29T15:20:42.385Z  
 
 ```c_cpp
+
 #include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-	// your code goes here
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
+    int T;
+    cin >> T;
+
+    while (T--) {
+        int N;
+        cin >> N;
+
+        vector<long long> A(N);
+        for (int i = 0; i < N; i++) cin >> A[i];
+
+        bool possible = true;
+        vector<long long> allowed;  // stores candidate X values (size 0, 1, or 2)
+
+        for (int i = 0; i < N / 2; i++) {
+            long long a = A[i];
+            long long b = A[N - 1 - i];
+
+            if (a == b) continue;
+
+            if (abs(a - b) != 2) {
+                possible = false;
+                break;
+            }
+
+            long long mn = min(a, b);
+            vector<long long> cur = {mn, mn + 1};
+
+            if (allowed.empty()) {
+                allowed = cur;
+            } else {
+                vector<long long> inter;
+                for (long long x : allowed) {
+                    if (x == cur[0] || x == cur[1])
+                        inter.push_back(x);
+                }
+                allowed = inter;
+                if (allowed.empty()) {
+                    possible = false;
+                    break;
+                }
+            }
+        }
+
+        cout << (possible ? "Yes" : "No") << '\n';
+    }
+
+    return 0;
 }
-
 ```
 
 ---

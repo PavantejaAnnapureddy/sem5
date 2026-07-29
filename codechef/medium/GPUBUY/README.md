@@ -72,31 +72,33 @@ In the first month, its price increases by $Y=2$ to become $8$ coins. Chef earns
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-07-29T14:49:34.948Z  
+**Submitted:** 2026-07-29T14:48:46.806Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-    int T;
-    cin >> T;
+	// your code goes here
+int d;
+cin>>d;
+for(int i=0;i<d;i++){
+    long long a,s,f;
+    cin>>a>>s>>f;
+     long long x=a/(f-s);
     
-    while (T--) {
-        long long X, Y, Z;
-        cin >> X >> Y >> Z;
-        if (Z <= Y) {
-            cout << -1 << endl;
-            continue;
-        }
-        long long diff = Z - Y;
-        long long months = (X + diff - 1) / diff; 
-        
-        cout << months << endl;
+     if(f==s){
+    cout<<"-1"<<endl;
     }
+    else if((f-s)>a){
+        cout<<"1"<<endl;
+        
+    }
+    else{
+    cout<<x<<endl;
     
-    return 0;
 }
+}}
 
 ```
 

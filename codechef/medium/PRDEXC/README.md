@@ -58,7 +58,7 @@ It can be verified that this is the minimum number of operations needed.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-07-29T15:03:47.945Z  
+**Submitted:** 2026-07-29T15:05:09.730Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -77,12 +77,23 @@ int main() {
         }
         
         int ans = INT_MAX;
-        for (int incX = 0; incX <= P; incX++) {
-            for (int incY = 0; incY <= P; incY++) {
-                if ((X + incX) * (Y + incY) >= P) {
-                    ans = min(ans, incX + incY);
-                }
+        for (int newX = X; newX <= P; newX++) {
+            long long neededY = (P + newX - 1) / newX;  
+            if (neededY < Y) {
+                neededY = Y;
             }
+            int moves = (newX - X) + (neededY - Y);
+            ans = min(ans, moves);
+        }
+        
+        for (int newY = Y; newY <= P; newY++) {
+            long long neededX = (P + newY - 1) / newY;
+            if (neededX < X) {
+                neededX = X;
+            }
+            
+            int moves = (neededX - X) + (newY - Y);
+            ans = min(ans, moves);
         }
         
         cout << ans << endl;

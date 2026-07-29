@@ -70,7 +70,7 @@ No
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-07-29T15:20:42.385Z  
+**Submitted:** 2026-07-29T15:24:17.696Z  
 
 ```c_cpp
 
@@ -92,7 +92,7 @@ int main() {
         for (int i = 0; i < N; i++) cin >> A[i];
 
         bool possible = true;
-        vector<long long> allowed;  // stores candidate X values (size 0, 1, or 2)
+        vector<long long> allowed;  
 
         for (int i = 0; i < N / 2; i++) {
             long long a = A[i];

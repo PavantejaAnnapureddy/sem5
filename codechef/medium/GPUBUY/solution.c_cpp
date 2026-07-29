@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+int d;
+cin>>d;
+for(int i=0;i<d;i++){
+    int a,s,f;
+    cin>>a>>s>>f;
+     int x=a/(f-s);
+    
+     if(f==s){
+    cout<<"-1"<<endl;
+    }
+    else if((f-s)>a){
+        cout<<"1"<<endl;
+        
+    }
+    else{
+    cout<<x<<endl;
+    
+}
+}}

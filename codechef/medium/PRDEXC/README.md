@@ -58,7 +58,7 @@ It can be verified that this is the minimum number of operations needed.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-07-29T14:53:49.950Z  
+**Submitted:** 2026-07-29T15:03:47.945Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -71,17 +71,12 @@ int main() {
     while (T--) {
         long long X, Y, P;
         cin >> X >> Y >> P;
-        
-        // If already satisfied
         if (X * Y >= P) {
             cout << 0 << endl;
             continue;
         }
         
         int ans = INT_MAX;
-        
-        // Try all possible increments for X and Y
-        // Upper bound: we never need more than P moves (incrementing one variable)
         for (int incX = 0; incX <= P; incX++) {
             for (int incY = 0; incY <= P; incY++) {
                 if ((X + incX) * (Y + incY) >= P) {

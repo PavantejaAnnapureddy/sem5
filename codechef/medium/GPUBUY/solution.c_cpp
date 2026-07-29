@@ -2,21 +2,23 @@
 using namespace std;
 
 int main() {
-    int T;
-    cin >> T;
+	// your code goes here
+int d;
+cin>>d;
+for(int i=0;i<d;i++){
+    long long a,s,f;
+    cin>>a>>s>>f;
+     long long x=a/(f-s);
     
-    while (T--) {
-        long long X, Y, Z;
-        cin >> X >> Y >> Z;
-        if (Z <= Y) {
-            cout << -1 << endl;
-            continue;
-        }
-        long long diff = Z - Y;
-        long long months = (X + diff - 1) / diff; 
-        
-        cout << months << endl;
+     if(f==s){
+    cout<<"-1"<<endl;
     }
+    else if((f-s)>a){
+        cout<<"1"<<endl;
+        
+    }
+    else{
+    cout<<x<<endl;
     
-    return 0;
 }
+}}

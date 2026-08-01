@@ -56,9 +56,9 @@ All prefixes of `s = "101"` are already alternating strings. Thus, the answer is
 ## Solution
 
 **Language:** Python  
-**Runtime:** 3 ms (beats 80.00%)  
-**Memory:** 19.3 MB (beats 40.00%)  
-**Submitted:** 2026-08-01T15:03:48.480Z  
+**Runtime:** 7 ms (beats 20.00%)  
+**Memory:** 19.4 MB (beats 20.00%)  
+**Submitted:** 2026-08-01T15:23:38.282Z  
 
 ```py
 class Solution:

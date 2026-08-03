@@ -78,18 +78,34 @@ Therefore, the maximum possible difference is $14$.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-03T15:29:00.822Z  
+**Submitted:** 2026-08-03T15:30:44.470Z  
 
 ```py
-
+n = int(input())
+v = list(map(int, input().split()))
+p = list(map(int, input().split())
+children = [[] for _ in range(n)]
 root = -1
+
 for i in range(n):
-    if parent[i] == -1:
+    if p[i] == -1:
         root = i
-        break
+    else:
+        children[p[i]-1].append(i)
+ans = 0
+stack = [(root, v[root], v[root])]
 
-root = parent.index(-1)  #
+while stack:
+    node, mn, mx = stack.pop()
+    ans = max(ans, abs(v[node]-mn), abs(v[node]-mx))
+    
+    new_mn = min(mn, v[node])
+    new_mx = max(mx, v[node])
+    
+    for child in children[node]:
+        stack.append((child, new_mn, new_mx))
 
+print(ans)
 ```
 
 ---

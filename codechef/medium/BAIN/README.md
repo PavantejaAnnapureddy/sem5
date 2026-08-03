@@ -72,12 +72,22 @@ Hence, Chef cannot make a balanced selection.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-03T15:07:48.994Z  
+**Submitted:** 2026-08-03T15:13:43.375Z  
 
 ```py
-a,b,c,d=map(int,input().split())
 
+from itertools import combinations
 
+a, b, c, d = map(int, input().split())
+arr = [a, b, c, d]
+
+for r in range(1, 5):  
+    for combo in combinations(arr, r):
+        if sum(combo) == 0:
+            print("Yes")
+            exit()
+
+print("No")
 ```
 
 ---

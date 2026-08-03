@@ -75,12 +75,13 @@ $$ 31-29=2 $$
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-03T15:16:49.985Z  
+**Submitted:** 2026-08-03T15:19:08.963Z  
 
 ```py
 N=int(input().split())
 arr=map(int,input().split())
-
+miinus= min(arr[i]-arr[i-1]) for i range (1,N)
+print(miinus)
 
 ```
 

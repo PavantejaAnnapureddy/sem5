@@ -78,10 +78,17 @@ Therefore, the maximum possible difference is $14$.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-03T15:21:38.997Z  
+**Submitted:** 2026-08-03T15:29:00.822Z  
 
 ```py
-# cook your dish here
+
+root = -1
+for i in range(n):
+    if parent[i] == -1:
+        root = i
+        break
+
+root = parent.index(-1)  #
 
 ```
 

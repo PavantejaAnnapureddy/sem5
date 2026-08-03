@@ -85,7 +85,7 @@ Since the totals are not equal, the answer is `NO`.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-03T15:01:44.972Z  
+**Submitted:** 2026-08-03T15:02:01.091Z  
 
 ```py
 A,x,B,Y

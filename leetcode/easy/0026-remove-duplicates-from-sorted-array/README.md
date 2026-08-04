@@ -63,8 +63,8 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 
 **Language:** Python  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 20.4 MB (beats 78.38%)  
-**Submitted:** 2026-08-04T09:44:35.973Z  
+**Memory:** 20.6 MB (beats 17.04%)  
+**Submitted:** 2026-08-04T10:27:44.712Z  
 
 ```py
 from typing import List

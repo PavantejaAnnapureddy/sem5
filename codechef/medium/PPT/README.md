@@ -52,20 +52,15 @@ Output
 
 ## Solution
 
-**Language:** c_cpp  
+**Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-05T14:41:04.446Z  
+**Submitted:** 2026-08-05T14:41:13.431Z  
 
-```c_cpp
-#include <bits/stdc++.h>
-using namespace std;
-
-int main() {
-	// your code goes here
-
-}
-
+```py
+# cook your dish here
+N = int(input())
+print(20 - N)
 ```
 
 ---

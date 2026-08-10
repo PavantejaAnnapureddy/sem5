@@ -16,8 +16,6 @@ class Solution:
       
             if s[i] in vowels:
                 current += 1
-            
-            # Update max for this valid window
             max_vowels = max(max_vowels, current)
         
         return max_vowels

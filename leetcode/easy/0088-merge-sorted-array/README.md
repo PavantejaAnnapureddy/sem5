@@ -59,18 +59,21 @@ Note that because m = 0, there are no elements in nums1. The 0 is only there to 
 
 ## Solution
 
-**Language:** Python  
+**Language:** C++  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 19.2 MB (beats 76.95%)  
-**Submitted:** 2026-08-10T10:13:32.812Z  
+**Memory:** 12.4 MB (beats 32.46%)  
+**Submitted:** 2026-08-10T10:22:02.757Z  
 
-```py
-from typing import List
-
-class Solution:
-    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
-        nums1[m:] = nums2
-        nums1.sort()
+```cpp
+class Solution {
+public:
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        for (int i = 0; i < n; i++) {
+            nums1[m + i] = nums2[i];
+        }
+        sort(nums1.begin(), nums1.end());
+    }
+};
 ```
 
 ---

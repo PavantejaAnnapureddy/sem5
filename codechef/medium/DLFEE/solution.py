@@ -1,8 +1,6 @@
-# cook your dish here
-d,f,g= int(input(),split())
-if(d>g){
-    print(d)
-}
-else{
-    print(d+f)
-}
+A, B, K = map(int, input().split())
+
+if A >= K:
+    print(A)
+else:
+    print(A + B)

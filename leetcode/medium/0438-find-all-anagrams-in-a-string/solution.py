@@ -5,24 +5,21 @@ class Solution:
         if len(s) < len(p):
             return []
         
-        p_count = [0] * 26
-        s_count = [0] * 26
+        count = [0] * 26
+        for c in p:
+            count[ord(c) - 97] += 1
+        
         result = []
+        left = 0
         
-        for ch in p:
-            p_count[ord(ch) - ord('a')] += 1
-        
-        for i in range(len(p)):
-            s_count[ord(s[i]) - ord('a')] += 1
-        
-        if s_count == p_count:
-            result.append(0)
-        
-        for i in range(len(p), len(s)):
-            s_count[ord(s[i - len(p)]) - ord('a')] -= 1
-            s_count[ord(s[i]) - ord('a')] += 1
+        for right in range(len(s)):
+            count[ord(s[right]) - 97] -= 1
             
-            if s_count == p_count:
-                result.append(i - len(p) + 1)
+            while count[ord(s[right]) - 97] < 0:
+                count[ord(s[left]) - 97] += 1
+                left += 1
+            
+            if right - left + 1 == len(p):
+                result.append(left)
         
         return result

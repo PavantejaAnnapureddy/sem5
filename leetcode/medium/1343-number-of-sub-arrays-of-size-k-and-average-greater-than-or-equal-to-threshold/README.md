@@ -38,29 +38,21 @@ Explanation: The first 6 sub-arrays of size 3 have averages greater than 5. Note
 ## Solution
 
 **Language:** Python  
-**Runtime:** 37 ms (beats 80.61%)  
-**Memory:** 30.2 MB (beats 28.33%)  
-**Submitted:** 2026-07-28T10:40:37.206Z  
+**Runtime:** 54 ms (beats 34.72%)  
+**Memory:** 30.2 MB (beats 25.91%)  
+**Submitted:** 2026-08-10T09:55:48.361Z  
 
 ```py
 from typing import List
 
 class Solution:
     def numOfSubarrays(self, arr: List[int], k: int, threshold: int) -> int:
-        # Calculate sum of first window
         window_sum = sum(arr[:k])
         count = 0
-        
-        # Check first window
         if window_sum / k >= threshold:
             count += 1
-        
-        # Slide the window
         for i in range(k, len(arr)):
-            # Update window sum
             window_sum = window_sum - arr[i - k] + arr[i]
-            
-            # Check if average >= threshold
             if window_sum / k >= threshold:
                 count += 1
         

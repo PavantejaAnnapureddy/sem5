@@ -92,7 +92,7 @@ The maximum lead is $10$, achieved by Player $2$.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-10T14:44:18.839Z  
+**Submitted:** 2026-08-10T14:46:31.284Z  
 
 ```py
 n = int(input())

@@ -48,9 +48,9 @@ Explanation: "lee", "eet" and "ode" contain 2 vowels.
 ## Solution
 
 **Language:** Python  
-**Runtime:** 39 ms (beats 97.49%)  
-**Memory:** 19.8 MB (beats 65.47%)  
-**Submitted:** 2026-08-10T09:45:20.080Z  
+**Runtime:** 47 ms (beats 78.76%)  
+**Memory:** 20 MB (beats 11.91%)  
+**Submitted:** 2026-08-10T09:46:50.962Z  
 
 ```py
 class Solution:
@@ -71,8 +71,6 @@ class Solution:
       
             if s[i] in vowels:
                 current += 1
-            
-            # Update max for this valid window
             max_vowels = max(max_vowels, current)
         
         return max_vowels

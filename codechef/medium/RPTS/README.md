@@ -70,11 +70,22 @@ Therefore, the answer is $2$
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-10T14:47:02.507Z  
+**Submitted:** 2026-08-10T14:47:31.209Z  
 
 ```py
-# cook your dish here
+n, k = map(int, input().split())
+s = input().strip()
 
+min_repaint = float('inf')
+
+for i in range(n - k + 1):
+    whites = 0
+    for j in range(i, i + k):
+        if s[j] == 'W':
+            whites += 1
+    min_repaint = min(min_repaint, whites)
+
+print(min_repaint)
 ```
 
 ---

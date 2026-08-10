@@ -61,11 +61,17 @@ Therefore, the total amount is $600$.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-10T14:35:24.062Z  
+**Submitted:** 2026-08-10T14:38:22.489Z  
 
 ```py
 # cook your dish here
-d= int(input())
+d,f,g= int(input(),split())
+if(d>g){
+    print(d)
+}
+else{
+    print(d+f)
+}
 
 ```
 

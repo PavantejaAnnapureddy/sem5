@@ -70,19 +70,20 @@ Therefore, the answer is $2$
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-10T14:47:31.209Z  
+**Submitted:** 2026-08-10T14:55:34.845Z  
 
 ```py
 n, k = map(int, input().split())
 s = input().strip()
 
-min_repaint = float('inf')
+whites = s[:k].count('W')
+min_repaint = whites
 
-for i in range(n - k + 1):
-    whites = 0
-    for j in range(i, i + k):
-        if s[j] == 'W':
-            whites += 1
+for i in range(n - k):
+    if s[i] == 'W':
+        whites -= 1
+    if s[i + k] == 'W':
+        whites += 1
     min_repaint = min(min_repaint, whites)
 
 print(min_repaint)

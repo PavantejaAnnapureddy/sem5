@@ -92,7 +92,7 @@ The maximum lead is $10$, achieved by Player $2$.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-10T14:39:59.503Z  
+**Submitted:** 2026-08-10T14:42:26.848Z  
 
 ```py
 # cook your dish here

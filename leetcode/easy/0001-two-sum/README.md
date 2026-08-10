@@ -4,7 +4,7 @@
 
 ## Problem
 
-Given an array of integers `nums` and an integer `target`, return  *indices of the two numbers such that they add up to `target`*.
+You are given an array of integers `nums` and an integer `target`, return  *indices of the two numbers such that they add up to `target`*.
 
 You may assume that each input would have  ***exactly *one solution**, and you may not use the* same* element twice.
 
@@ -53,9 +53,9 @@ Output: [0,1]
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 15.3 MB (beats 8.51%)  
-**Submitted:** 2026-07-21T10:28:11.845Z  
+**Runtime:** 1 ms (beats 76.73%)  
+**Memory:** 15.4 MB (beats 7.73%)  
+**Submitted:** 2026-08-10T08:46:51.936Z  
 
 ```cpp
 class Solution {

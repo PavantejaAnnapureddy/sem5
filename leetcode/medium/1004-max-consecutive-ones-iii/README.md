@@ -38,9 +38,9 @@ Bolded numbers were flipped from 0 to 1. The longest subarray is underlined.
 ## Solution
 
 **Language:** Python  
-**Runtime:** 60 ms (beats 48.04%)  
-**Memory:** 22.3 MB (beats 6.41%)  
-**Submitted:** 2026-08-11T09:10:18.798Z  
+**Runtime:** 61 ms (beats 44.87%)  
+**Memory:** 22.3 MB (beats 22.47%)  
+**Submitted:** 2026-08-11T09:22:09.310Z  
 
 ```py
 class Solution:
@@ -61,6 +61,24 @@ class Solution:
             max_len = max(max_len, right - left + 1)
         
         return max_len
+#from collections import Counter
+"""
+#class Solution:
+    def longestOnes(self, nums: list[int], k: int) -> int:
+        window_count = Counter()  
+        left = 0
+        max_len = 0
+        
+        for right in range(len(nums)):
+            window_count[nums[right]] += 1
+            
+            while window_count[0] > k:
+                window_count[nums[left]] -= 1
+                left += 1
+            
+            max_len = max(max_len, right - left + 1)
+        
+        return max_len"""
 ```
 
 ---

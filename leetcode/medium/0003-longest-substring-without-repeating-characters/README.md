@@ -46,9 +46,9 @@ Notice that the answer must be a substring, "pwke" is a subsequence and not a su
 ## Solution
 
 **Language:** Python  
-**Runtime:** 202 ms (beats 21.54%)  
-**Memory:** 20.2 MB (beats 8.88%)  
-**Submitted:** 2026-08-11T10:01:12.718Z  
+**Runtime:** 216 ms (beats 14.88%)  
+**Memory:** 19.9 MB (beats 8.88%)  
+**Submitted:** 2026-08-11T10:17:14.942Z  
 
 ```py
 class Solution:

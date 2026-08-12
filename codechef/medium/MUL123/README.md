@@ -73,7 +73,7 @@ It can be verified that using fewer than two operations is not enough to make $N
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-12T14:43:19.864Z  
+**Submitted:** 2026-08-12T14:45:54.201Z  
 
 ```py
 # cook your dish here
@@ -98,6 +98,32 @@ for _ in range(T):
     while curr %3 !=0:
         curr +=1
         ops+=1
+    ans = min(ans, ops)
+    print(ans)
+"""T = int(input())
+
+for _ in range(T):
+    N = int(input())
+    
+    # Strategy 1: Only add 1s
+    if N % 3 == 0:
+        ans = 0
+    elif N % 3 == 1:
+        ans = 2
+    else:  # N % 3 == 2
+        ans = 1
+    
+   
+    next_multiple_of_5 = ((N // 5) + 1) * 5
+    
+    ops = 1  # for the jump
+    if next_multiple_of_5 % 3 == 0:
+        ops += 0
+    elif next_multiple_of_5 % 3 == 1:
+        ops += 2
+    else:  # next_multiple_of_5 % 3 == 2
+        ops += 1
+    
     ans = min(ans, ops)
     print(ans)
 ```

@@ -76,7 +76,7 @@ Bob can thus eat all the chocolates without ever giving Alice a turn - so Alice 
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-12T15:02:06.899Z  
+**Submitted:** 2026-08-12T15:08:45.433Z  
 
 ```py
 T = int(input())
@@ -98,7 +98,6 @@ for _ in range(T):
                     ate = True
                     break
             if not ate:
-                # Must eat 1
                 for i in range(N):
                     if A[i] == 1:
                         A[i] = 0

@@ -1,6 +1,6 @@
 # cook your dish here
 T=int(input())
-for_ in range(T):
+for _ in range(T):
     N=int(input())
     ans = float('inf')
     curr = N 

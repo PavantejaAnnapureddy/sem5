@@ -73,7 +73,7 @@ It can be verified that using fewer than two operations is not enough to make $N
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-12T14:45:54.201Z  
+**Submitted:** 2026-08-12T14:46:19.793Z  
 
 ```py
 # cook your dish here
@@ -125,7 +125,7 @@ for _ in range(T):
         ops += 1
     
     ans = min(ans, ops)
-    print(ans)
+    print(ans)"""
 ```
 
 ---

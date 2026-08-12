@@ -76,12 +76,51 @@ Bob can thus eat all the chocolates without ever giving Alice a turn - so Alice 
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-12T15:01:31.454Z  
+**Submitted:** 2026-08-12T15:02:46.165Z  
 
 ```py
-# cook your dish here
-N=int(input())
-
+T = int(input())
+for _ in range(T):
+    N = int(input())
+    A = list(map(int, input().split()))
+    
+    total = sum(A)
+    alice = 0
+    
+    while total > 0:
+        if total % 2 == 0:
+            ate = False
+            for i in range(N):
+                if A[i] >= 2:
+                    A[i] -= 2
+                    alice += 2
+                    total -= 2
+                    ate = True
+                    break
+            if not ate:
+                for i in range(N):
+                    if A[i] == 1:
+                        A[i] = 0
+                        alice += 1
+                        total -= 1
+                        break
+        else:
+            ate = False
+            for i in range(N):
+                if A[i] >= 2:
+                    A[i] -= 2
+                    total -= 2
+                    ate = True
+                    break
+            if not ate:
+           
+                for i in range(N):
+                    if A[i] == 1:
+                        A[i] = 0
+                        total -= 1
+                        break
+    
+    print(alice)
 ```
 
 ---

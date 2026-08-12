@@ -47,4 +47,4 @@ for _ in range(T):
         ops += 1
     
     ans = min(ans, ops)
-    print(ans)
+    print(ans)"""

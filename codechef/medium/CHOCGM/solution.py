@@ -17,7 +17,6 @@ for _ in range(T):
                     ate = True
                     break
             if not ate:
-                # Must eat 1
                 for i in range(N):
                     if A[i] == 1:
                         A[i] = 0

@@ -45,8 +45,8 @@ Output: [3,4,6,16,17]
 
 **Language:** Python  
 **Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 19.3 MB (beats 78.72%)  
-**Submitted:** 2026-07-16T15:14:33.092Z  
+**Memory:** 19.4 MB (beats 42.45%)  
+**Submitted:** 2026-08-17T08:54:44.590Z  
 
 ```py
 class Solution:

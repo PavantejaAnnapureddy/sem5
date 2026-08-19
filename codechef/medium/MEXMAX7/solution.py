@@ -10,55 +10,28 @@ for _ in range(T):
     for x in A:
         freq[x] += 1
     
+    pow2 = [1] * (N + 2)
+    for i in range(1, N + 2):
+        pow2[i] = (pow2[i - 1] * 2) % MOD
+    
+    ways = [0] * (N + 2)
+    for i in range(N + 2):
+        ways[i] = (pow2[freq[i]] - 1) % MOD
+    
+    pref = [1] * (N + 2)
+    pref[0] = ways[0]
+    for i in range(1, N + 2):
+        pref[i] = (pref[i - 1] * ways[i]) % MOD
+    
     ans = 0
     
-    # Case 1: mex = max + 1
-    for m in range(N + 1):
-        if freq[m] == 0:
-            continue
-        
-        possible = True
-        for i in range(m):
-            if freq[i] == 0:
-                possible = False
-                break
-        if not possible:
-            continue
-        
-        if freq[m+1] > 0:
-            continue
-        
-        ways = 1
-        for i in range(m):
-            ways = (ways * pow(2, freq[i], MOD)) % MOD
-        
-        ways = (ways * (pow(2, freq[m], MOD) - 1)) % MOD
-        
-        ans = (ans + ways) % MOD
+    for m in range(1, N + 1):
+        prod = pref[m - 1]
+        ans = (ans + prod) % MOD
     
-    # Case 2: max = mex + 1
-    for m in range(N):
-        if m > 0:
-            possible = True
-            for i in range(m):
-                if freq[i] == 0:
-                    possible = False
-                    break
-            if not possible:
-                continue
-        
-        if freq[m] > 0:
-            continue
-        
-        if freq[m+1] == 0:
-            continue
-        
-        ways = 1
-        for i in range(m):
-            ways = (ways * pow(2, freq[i], MOD)) % MOD
-        
-        ways = (ways * (pow(2, freq[m+1], MOD) - 1)) % MOD
-        
-        ans = (ans + ways) % MOD
+    for m in range(0, N):
+        prod = pref[m - 1] if m > 0 else 1
+        prod = (prod * ways[m + 1]) % MOD
+        ans = (ans + prod) % MOD
     
     print(ans)

@@ -53,14 +53,21 @@ Output
 
 ## Solution
 
-**Language:** plain_text  
+**Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-19T16:15:35.758Z  
+**Submitted:** 2026-08-19T16:16:32.934Z  
 
-```plain_text
+```py
 # cook your dish here
-
+T = int(input())
+for _ in range(T):
+    N = int(input())
+    arr = list(map(int, input().split()))
+    max_sum = 0
+    for i in range(N):
+        max_sum += max(arr[i], arr[2*N - 1 - i])
+    print(max_sum)
 ```
 
 ---

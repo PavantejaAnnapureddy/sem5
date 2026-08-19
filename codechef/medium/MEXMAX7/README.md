@@ -61,7 +61,7 @@ Output
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-19T16:18:50.136Z  
+**Submitted:** 2026-08-19T16:19:32.886Z  
 
 ```py
 # cook your dish here
@@ -78,34 +78,9 @@ for _ in range(T):
     
     ans = 0
     
+    # Case 1: mex = max + 1
     for m in range(N + 1):
         if freq[m] == 0:
-            continue
-        max_val = m - 1
-        if max_val < 0:
-            continue
-        if max_val >= 0 and freq[max_val] == 0:
-            continue
-        
-        possible = True
-        for i in range(m - 1):
-            if freq[i] == 0:
-                possible = False
-                break
-        if not possible:
-            continue
-        
-        ways = 1
-        for i in range(m - 1):
-            ways = (ways * pow(2, freq[i], MOD)) % MOD
-        
-        ways = (ways * (pow(2, freq[m-1], MOD) - 1)) % MOD
-        
-        ans = (ans + ways) % MOD
-    
-    for m in range(N):
-        max_val = m + 1
-        if freq[m] == 0 or freq[m+1] == 0:
             continue
         
         possible = True
@@ -116,7 +91,32 @@ for _ in range(T):
         if not possible:
             continue
         
+        if freq[m+1] > 0:
+            continue
+        
+        ways = 1
+        for i in range(m):
+            ways = (ways * pow(2, freq[i], MOD)) % MOD
+        
+        ways = (ways * (pow(2, freq[m], MOD) - 1)) % MOD
+        
+        ans = (ans + ways) % MOD
+    
+    # Case 2: max = mex + 1
+    for m in range(N):
+        if m > 0:
+            possible = True
+            for i in range(m):
+                if freq[i] == 0:
+                    possible = False
+                    break
+            if not possible:
+                continue
+        
         if freq[m] > 0:
+            continue
+        
+        if freq[m+1] == 0:
             continue
         
         ways = 1

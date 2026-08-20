@@ -36,9 +36,9 @@ The vowels in `s` are `['I', 'e', 'e', 'A']`. On reversing the vowels, s becomes
 ## Solution
 
 **Language:** Python  
-**Runtime:** 9 ms (beats 59.81%)  
-**Memory:** 20.6 MB (beats 27.07%)  
-**Submitted:** 2026-07-20T09:29:37.182Z  
+**Runtime:** 8 ms (beats 64.94%)  
+**Memory:** 20.6 MB (beats 27.25%)  
+**Submitted:** 2026-08-20T16:29:04.406Z  
 
 ```py
 class Solution:

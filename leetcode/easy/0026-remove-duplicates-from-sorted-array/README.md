@@ -62,9 +62,9 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 20.6 MB (beats 17.44%)  
-**Submitted:** 2026-08-20T15:17:06.966Z  
+**Runtime:** 7 ms (beats 12.50%)  
+**Memory:** 20.5 MB (beats 42.73%)  
+**Submitted:** 2026-08-20T15:31:00.150Z  
 
 ```py
 from typing import List
@@ -76,11 +76,11 @@ class Solution:
         
         k = 1  
         
-        for i in range(1, len(nums)):
+        
+        for i in range(1,len(nums)):
             if nums[i] != nums[i - 1]:
                 nums[k] = nums[i]
-                k += 1
-        
+                k +=1
         return k
 ```
 

@@ -34,14 +34,16 @@ Given two strings `s` and `t`, return `true` if `t` is an anagram of `s`, and `f
 ## Solution
 
 **Language:** Python  
-**Runtime:** 19 ms (beats 16.43%)  
-**Memory:** 20.2 MB (beats 18.18%)  
-**Submitted:** 2026-07-27T10:14:09.316Z  
+**Runtime:** 6 ms (beats 93.33%)  
+**Memory:** 19.5 MB (beats 29.99%)  
+**Submitted:** 2026-08-20T16:03:20.288Z  
 
 ```py
+from collections import Counter
+
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        return sorted(s) == sorted(t)
+        return Counter(s) == Counter(t)
 ```
 
 ---

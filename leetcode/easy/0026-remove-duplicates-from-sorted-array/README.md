@@ -62,9 +62,9 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 ## Solution
 
 **Language:** Python  
-**Runtime:** 2 ms (beats 49.63%)  
-**Memory:** 20.5 MB (beats 42.30%)  
-**Submitted:** 2026-08-04T10:28:39.975Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 20.6 MB (beats 17.44%)  
+**Submitted:** 2026-08-20T15:17:06.966Z  
 
 ```py
 from typing import List

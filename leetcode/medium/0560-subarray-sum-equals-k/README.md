@@ -36,29 +36,34 @@ Output: 2
 
 ## Solution
 
-**Language:** Python  
-**Runtime:** 38 ms (beats 29.66%)  
-**Memory:** 21.8 MB (beats 56.38%)  
-**Submitted:** 2026-08-24T09:24:26.090Z  
+**Language:** C++  
+**Runtime:** 2762 ms (beats 5.06%)  
+**Memory:** 34.3 MB (beats 94.29%)  
+**Submitted:** 2026-08-24T10:17:12.133Z  
 
-```py
-from typing import List
+```cpp
+#include <vector>
+using namespace std;
 
-class Solution:
-    def subarraySum(self, nums: List[int], k: int) -> int:
-        count = 0
-        prefsum = 0
-        pref = {0: 1}
+class Solution {
+public:
+    int subarraySum(vector<int>& nums, int k) {
+        int count = 0;
         
-        for num in nums:
-            prefsum += num
-            
-            if (prefsum - k) in pref:
-                count += pref[prefsum - k]
-            
-            pref[prefsum] = pref.get(prefsum, 0) + 1
+        for (int i = 0; i < nums.size(); i++) {
+            int sum = 0;
+            for (int j = i; j < nums.size(); j++) {
+                sum += nums[j];
+                if (sum == k) {
+                    count++;
+                }
+            }
+        }
         
-        return count
+        return count;
+    }
+};
+
 ```
 
 ---

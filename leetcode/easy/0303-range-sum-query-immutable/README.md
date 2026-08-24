@@ -44,9 +44,9 @@ numArray.sumRange(0, 5); // return (-2) + 0 + 3 + (-5) + 2 + (-1) = -3
 ## Solution
 
 **Language:** Python  
-**Runtime:** 5 ms (beats 64.04%)  
-**Memory:** 16.2 MB (beats 36.90%)  
-**Submitted:** 2026-08-24T10:28:32.310Z  
+**Runtime:** 0 ms  
+**Memory:** 12.4 MB  
+**Submitted:** 2026-08-24T10:28:37.991Z  
 
 ```py
 class NumArray(object):

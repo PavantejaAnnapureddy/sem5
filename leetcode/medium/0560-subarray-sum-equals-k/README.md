@@ -37,9 +37,9 @@ Output: 2
 ## Solution
 
 **Language:** Python  
-**Runtime:** 36 ms (beats 34.07%)  
-**Memory:** 21.9 MB (beats 56.38%)  
-**Submitted:** 2026-08-24T09:13:28.154Z  
+**Runtime:** 0 ms  
+**Memory:** 19.4 MB  
+**Submitted:** 2026-08-24T09:13:41.120Z  
 
 ```py
 from typing import List

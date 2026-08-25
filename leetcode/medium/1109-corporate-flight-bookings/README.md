@@ -54,9 +54,9 @@ Hence, answer = [10,25]
 ## Solution
 
 **Language:** Python  
-**Runtime:** 23 ms (beats 89.41%)  
-**Memory:** 22.6 MB (beats 27.54%)  
-**Submitted:** 2026-08-25T09:13:15.286Z  
+**Runtime:** 30 ms (beats 42.37%)  
+**Memory:** 22.5 MB (beats 27.54%)  
+**Submitted:** 2026-08-25T09:22:32.982Z  
 
 ```py
 class Solution(object):

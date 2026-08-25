@@ -54,9 +54,9 @@ Hence, answer = [10,25]
 ## Solution
 
 **Language:** Python  
-**Runtime:** 25 ms (beats 77.12%)  
-**Memory:** 22.5 MB (beats 27.54%)  
-**Submitted:** 2026-08-25T09:04:38.016Z  
+**Runtime:** 23 ms (beats 89.41%)  
+**Memory:** 22.6 MB (beats 27.54%)  
+**Submitted:** 2026-08-25T09:13:15.286Z  
 
 ```py
 class Solution(object):
@@ -75,7 +75,6 @@ class Solution(object):
 
         return  answer[1:n+1]
 
-        
 ```
 
 ---

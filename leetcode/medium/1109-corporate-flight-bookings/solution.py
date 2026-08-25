@@ -13,5 +13,3 @@ class Solution(object):
          answer[i] += answer[i - 1]
 
         return  answer[1:n+1]
-
-        

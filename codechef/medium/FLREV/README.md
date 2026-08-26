@@ -73,7 +73,7 @@ Output
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-26T14:59:36.258Z  
+**Submitted:** 2026-08-26T14:53:15.932Z  
 
 ```py
 t = int(input())
@@ -90,38 +90,22 @@ for _ in range(t):
         print(initial)
         continue
     
-    flag2 = False
+    ans = initial
+    
     for i in range(1, n - 1):
-        if s[i - 1] == s[i + 1] and s[i - 1] != s[i]:
-            flag2 = True
+        if s[i-1] == s[i+1] and s[i-1] != s[i]:
+            ans = max(ans, initial + 2)
+    
+    has_same_after_diff = False
+    for i in range(n - 2):
+        if s[i] != s[i+1] and s[i] == s[i+2]:
+            has_same_after_diff = True
             break
     
-    if flag2:
-        print(min(n - 1, initial + 2))
-        continue
+    if has_same_after_diff:
+        ans = max(ans, initial + 1)
     
-    is_0_1 = True
-    seen_1 = False
-    for c in s:
-        if c == '1':
-            seen_1 = True
-        if seen_1 and c == '0':
-            is_0_1 = False
-            break
-    
-    is_1_0 = True
-    seen_0 = False
-    for c in s:
-        if c == '0':
-            seen_0 = True
-        if seen_0 and c == '1':
-            is_1_0 = False
-            break
-    
-    if not (is_0_1 or is_1_0):
-        print(min(n - 1, initial + 1))
-    else:
-        print(initial)
+    print(min(ans, n - 1))
 ```
 
 ---

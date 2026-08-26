@@ -2,49 +2,45 @@ t = int(input())
 for _ in range(t):
     n = int(input())
     s = input().strip()
-
-    # initial beauty
-    b = 0
+    
+    initial = 0
     for i in range(n - 1):
         if s[i] == s[i + 1]:
-            b += 1
-
-    # if already maximum
-    if b == n - 1:
-        print(b)
+            initial += 1
+    
+    if initial == n - 1:
+        print(initial)
         continue
-
-    # check if +2 is possible
-    first_01 = -1
-    first_10 = -1
-    plus2 = False
-
-    for i in range(n - 1):
-        if s[i] != s[i + 1]:
-            if s[i] == '0':  # pattern "01"
-                if first_01 != -1 and first_01 + 2 <= i:
-                    plus2 = True
-                    break
-                if first_01 == -1:
-                    first_01 = i
-            else:  # pattern "10"
-                if first_10 != -1 and first_10 + 2 <= i:
-                    plus2 = True
-                    break
-                if first_10 == -1:
-                    first_10 = i
-
-    if plus2:
-        print(min(n - 1, b + 2))
+    
+    flag2 = False
+    for i in range(1, n - 1):
+        if s[i - 1] == s[i + 1] and s[i - 1] != s[i]:
+            flag2 = True
+            break
+    
+    if flag2:
+        print(min(n - 1, initial + 2))
         continue
-
-    # count number of different adjacent pairs
-    diff = 0
-    for i in range(n - 1):
-        if s[i] != s[i + 1]:
-            diff += 1
-
-    if diff >= 2:
-        print(min(n - 1, b + 1))
+    
+    is_0_1 = True
+    seen_1 = False
+    for c in s:
+        if c == '1':
+            seen_1 = True
+        if seen_1 and c == '0':
+            is_0_1 = False
+            break
+    
+    is_1_0 = True
+    seen_0 = False
+    for c in s:
+        if c == '0':
+            seen_0 = True
+        if seen_0 and c == '1':
+            is_1_0 = False
+            break
+    
+    if not (is_0_1 or is_1_0):
+        print(min(n - 1, initial + 1))
     else:
-        print(b)
+        print(initial)

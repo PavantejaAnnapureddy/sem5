@@ -73,7 +73,7 @@ Output
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-26T14:52:31.818Z  
+**Submitted:** 2026-08-26T14:49:42.887Z  
 
 ```py
 t = int(input())
@@ -90,30 +90,16 @@ for _ in range(t):
         print(initial)
         continue
     
-    ans = initial
+    max_beauty = initial
     
     for i in range(1, n - 1):
         if s[i-1] == s[i+1] and s[i-1] != s[i]:
-            ans = max(ans, initial + 2)
+            max_beauty = max(max_beauty, initial + 2)
     
-    for i in range(n - 1):
-        if s[i] != s[i+1]:
-            new_s = s[:i] + s[i+1] + s[i] + s[i+2:]
-            new_beauty = 0
-            for j in range(n - 1):
-                if new_s[j] == new_s[j+1]:
-                    new_beauty += 1
-            ans = max(ans, new_beauty)
+    if initial + 1 <= n - 1:
+        max_beauty = max(max_beauty, initial + 1)
     
-    for i in range(n - 2):
-        new_s = s[:i] + s[i+2] + s[i+1] + s[i] + s[i+3:]
-        new_beauty = 0
-        for j in range(n - 1):
-            if new_s[j] == new_s[j+1]:
-                new_beauty += 1
-        ans = max(ans, new_beauty)
-    
-    print(min(ans, n - 1))
+    print(min(max_beauty, n - 1))
 ```
 
 ---

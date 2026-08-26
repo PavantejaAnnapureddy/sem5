@@ -18,13 +18,21 @@ for _ in range(t):
         if s[i-1] == s[i+1] and s[i-1] != s[i]:
             ans = max(ans, initial + 2)
     
-    has_same_after_diff = False
-    for i in range(n - 2):
-        if s[i] != s[i+1] and s[i] == s[i+2]:
-            has_same_after_diff = True
-            break
+    for i in range(n - 1):
+        if s[i] != s[i+1]:
+            new_s = s[:i] + s[i+1] + s[i] + s[i+2:]
+            new_beauty = 0
+            for j in range(n - 1):
+                if new_s[j] == new_s[j+1]:
+                    new_beauty += 1
+            ans = max(ans, new_beauty)
     
-    if has_same_after_diff:
-        ans = max(ans, initial + 1)
+    for i in range(n - 2):
+        new_s = s[:i] + s[i+2] + s[i+1] + s[i] + s[i+3:]
+        new_beauty = 0
+        for j in range(n - 1):
+            if new_s[j] == new_s[j+1]:
+                new_beauty += 1
+        ans = max(ans, new_beauty)
     
     print(min(ans, n - 1))

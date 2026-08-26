@@ -2,29 +2,49 @@ t = int(input())
 for _ in range(t):
     n = int(input())
     s = input().strip()
-    
-    initial = 0
+
+    # initial beauty
+    b = 0
     for i in range(n - 1):
         if s[i] == s[i + 1]:
-            initial += 1
-    
-    if initial == n - 1:
-        print(initial)
+            b += 1
+
+    # if already maximum
+    if b == n - 1:
+        print(b)
         continue
-    
-    ans = initial
-    
-    for i in range(1, n - 1):
-        if s[i-1] == s[i+1] and s[i-1] != s[i]:
-            ans = max(ans, initial + 2)
-    
-    has_same_after_diff = False
-    for i in range(n - 2):
-        if s[i] != s[i+1] and s[i] == s[i+2]:
-            has_same_after_diff = True
-            break
-    
-    if has_same_after_diff:
-        ans = max(ans, initial + 1)
-    
-    print(min(ans, n - 1))
+
+    # check if +2 is possible
+    first_01 = -1
+    first_10 = -1
+    plus2 = False
+
+    for i in range(n - 1):
+        if s[i] != s[i + 1]:
+            if s[i] == '0':  # pattern "01"
+                if first_01 != -1 and first_01 + 2 <= i:
+                    plus2 = True
+                    break
+                if first_01 == -1:
+                    first_01 = i
+            else:  # pattern "10"
+                if first_10 != -1 and first_10 + 2 <= i:
+                    plus2 = True
+                    break
+                if first_10 == -1:
+                    first_10 = i
+
+    if plus2:
+        print(min(n - 1, b + 2))
+        continue
+
+    # count number of different adjacent pairs
+    diff = 0
+    for i in range(n - 1):
+        if s[i] != s[i + 1]:
+            diff += 1
+
+    if diff >= 2:
+        print(min(n - 1, b + 1))
+    else:
+        print(b)

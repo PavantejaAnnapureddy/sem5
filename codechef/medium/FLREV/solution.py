@@ -18,7 +18,6 @@ for _ in range(t):
         if s[i-1] == s[i+1] and s[i-1] != s[i]:
             max_beauty = max(max_beauty, initial + 2)
     
-    if initial + 1 <= n - 1:
-        max_beauty = max(max_beauty, initial + 1)
+    max_beauty = max(max_beauty, initial + 1)
     
     print(min(max_beauty, n - 1))

@@ -48,12 +48,12 @@ Output: [-1,-1]
 ## Solution
 
 **Language:** Python  
-**Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 20.4 MB (beats 98.97%)  
-**Submitted:** 2026-08-31T08:57:41.545Z  
+**Runtime:** 2 ms (beats 6.25%)  
+**Memory:** 20.5 MB (beats 91.00%)  
+**Submitted:** 2026-08-31T09:16:04.270Z  
 
 ```py
-from typing import List
+'''from typing import List
 
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
@@ -77,8 +77,16 @@ class Solution:
                     
             return result
         
-        return [binarySearch(True), binarySearch(False)]
-        
+        return [binarySearch(True), binarySearch(False)]'''
+
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        first_position =bisect_left(nums, target)
+        last_position =bisect_right(nums, target)
+        if first_position != last_position:
+            return [first_position,last_position - 1] 
+        else:
+            return [-1 ,-1]
 ```
 
 ---

@@ -56,7 +56,7 @@ Output
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-02T15:46:49.958Z  
+**Submitted:** 2026-09-02T15:56:18.933Z  
 
 ```py
 t = int(input())
@@ -65,7 +65,7 @@ for _ in range(t):
     if n == 1:
         print(1)
     else:
-        print(3 * ((n + 2) // 3) + 1)
+        print(((n + 2) // 3) * 3 + 1)
 ```
 
 ---

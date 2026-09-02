@@ -4,4 +4,4 @@ for _ in range(t):
     if n == 1:
         print(1)
     else:
-        print(3 * ((n + 2) // 3) + 1)
+        print(((n + 2) // 3) * 3 + 1)

@@ -56,10 +56,10 @@ Output
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-02T15:39:41.861Z  
+**Submitted:** 2026-09-02T15:40:09.637Z  
 
 ```py
-# cook your dish here
+
 t = int(input())
 for _ in range(t):
     n = int(input())

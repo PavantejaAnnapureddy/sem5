@@ -52,11 +52,15 @@ Output
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-02T15:22:01.916Z  
+**Submitted:** 2026-09-02T15:24:27.951Z  
 
 ```py
 # cook your dish here
-
+y = int(input())
+while in y:
+    x=int(input())
+    
+    
 ```
 
 ---

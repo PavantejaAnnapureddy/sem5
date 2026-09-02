@@ -56,11 +56,19 @@ Output
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-02T15:38:03.914Z  
+**Submitted:** 2026-09-02T15:39:41.861Z  
 
 ```py
 # cook your dish here
-
+t = int(input())
+for _ in range(t):
+    n = int(input())
+    if n == 1:
+        print(1)
+    elif n % 3 == 2:
+        print(n + 2)
+    else:
+        print(n + 1)
 ```
 
 ---

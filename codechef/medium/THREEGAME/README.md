@@ -56,19 +56,16 @@ Output
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-02T15:40:09.637Z  
+**Submitted:** 2026-09-02T15:44:08.303Z  
 
 ```py
-
 t = int(input())
 for _ in range(t):
     n = int(input())
     if n == 1:
         print(1)
-    elif n % 3 == 2:
-        print(n + 2)
     else:
-        print(n + 1)
+        print(3 * ((n + 2) // 3) + 1)
 ```
 
 ---

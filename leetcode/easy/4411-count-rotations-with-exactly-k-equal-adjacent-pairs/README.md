@@ -62,9 +62,9 @@ Since `score` equals `k` for only 1 cyclic rotation of `s`, the answer is 1.
 ## Solution
 
 **Language:** Python  
-**Runtime:** 71 ms (beats 36.95%)  
-**Memory:** 19.4 MB (beats 6.95%)  
-**Submitted:** 2026-09-06T04:02:12.511Z  
+**Runtime:** 67 ms (beats 52.44%)  
+**Memory:** 19.4 MB (beats 30.70%)  
+**Submitted:** 2026-09-06T04:02:29.095Z  
 
 ```py
 class Solution:

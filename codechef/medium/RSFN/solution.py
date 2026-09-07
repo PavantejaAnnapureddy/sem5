@@ -14,8 +14,6 @@ def main():
     Q = nums[1]
     arr = nums[2:2+N]
     query_start = 2 + N
-    
-    # Precompute Fibonacci
     max_val = max(arr)
     fib = [0] * (max_val + 2)
     
@@ -26,13 +24,11 @@ def main():
     
     for i in range(3, max_val + 1):
         fib[i] = (fib[i-1] + fib[i-2]) % MOD
-    
-    # Prefix sum
     prefix = [0] * (N + 1)
     for i in range(1, N + 1):
         prefix[i] = (prefix[i-1] + fib[arr[i-1]]) % MOD
     
-    # Process queries
+
     output = []
     for i in range(Q):
         L = nums[query_start + 2*i]

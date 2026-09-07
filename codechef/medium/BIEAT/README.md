@@ -73,7 +73,7 @@ Each number has at most $4$ significant bits, so removing $4$ least significant 
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-07T14:43:07.567Z  
+**Submitted:** 2026-09-07T14:44:07.376Z  
 
 ```py
 import sys
@@ -108,8 +108,7 @@ def main():
     prefix = [0] * (N + 1)
     for i in range(1, N + 1):
         prefix[i] = (prefix[i-1] + fib[arr[i-1]]) % MOD
-    
-    # Process queries
+
     output = []
     for _ in range(Q):
         L = int(data[idx])
@@ -118,8 +117,7 @@ def main():
         
         result = (prefix[R] - prefix[L-1]) % MOD
         output.append(str(result))
-    
-    # Print all answers at once
+
     sys.stdout.write("\n".join(output))
 
 if __name__ == "__main__":

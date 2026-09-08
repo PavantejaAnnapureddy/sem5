@@ -54,28 +54,23 @@ An input string is valid if:
 ## Solution
 
 **Language:** Python  
-**Runtime:** 1 ms (beats 44.86%)  
-**Memory:** 19.3 MB (beats 63.33%)  
-**Submitted:** 2026-08-06T17:34:17.684Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 19.4 MB (beats 23.92%)  
+**Submitted:** 2026-09-08T09:06:32.951Z  
 
 ```py
 class Solution:
     def isValid(self, s: str) -> bool:
-        # Dictionary to map closing brackets to opening brackets
         bracket_map = {')': '(', '}': '{', ']': '['}
         stack = []
         
         for char in s:
             if char in bracket_map:
-                # Closing bracket
                 if not stack or stack[-1] != bracket_map[char]:
                     return False
                 stack.pop()
             else:
-                # Opening bracket
                 stack.append(char)
-        
-        # If stack is empty, all brackets matched correctly
         return not stack
 ```
 

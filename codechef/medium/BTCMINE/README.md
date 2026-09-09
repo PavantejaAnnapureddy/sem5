@@ -65,7 +65,7 @@ It can be verified that there's no way to make a positive profit by the end of t
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-09T15:18:20.945Z  
+**Submitted:** 2026-09-09T15:33:42.687Z  
 
 ```py
 T = int(input())

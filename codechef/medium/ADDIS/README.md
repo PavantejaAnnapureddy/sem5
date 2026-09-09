@@ -77,11 +77,22 @@ It can be shown that this is optimal.
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-09T14:37:19.014Z  
+**Submitted:** 2026-09-09T14:49:33.207Z  
 
 ```py
 # cook your dish here
+import math
 
+T = int(input())
+for _ in range(T):
+    N = int(input())
+    A = list(map(int, input().split()))
+    
+    from collections import Counter
+    freq = Counter(A)
+    max_freq = max(freq.values())
+    
+    print((max_freq + 1) // 2)  
 ```
 
 ---

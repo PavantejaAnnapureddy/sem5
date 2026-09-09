@@ -65,11 +65,22 @@ It can be verified that there's no way to make a positive profit by the end of t
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-09T15:03:50.014Z  
+**Submitted:** 2026-09-09T15:05:59.009Z  
 
 ```py
-# cook your dish here
 
+T = int(input())
+for _ in range(T):
+    X, Y = map(int, input().split())
+    days = 1
+    while True:
+        sum_squares = days * (days + 1) * (2 * days + 1) // 6
+        profit = Y * sum_squares - days * X
+        
+        if profit > 0:
+            print(days)
+            break
+        days += 1
 ```
 
 ---

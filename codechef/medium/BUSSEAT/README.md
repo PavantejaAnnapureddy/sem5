@@ -54,11 +54,17 @@ Hence, persons $1$ and $3$ share a row in this instance, so there are $2$ people
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-16T15:54:28.816Z  
+**Submitted:** 2026-09-16T15:55:02.318Z  
 
 ```py
 # cook your dish here
-
+t = int(input())
+for _ in range(t):
+    n, k = map(int, input().split())
+    if k <= n:
+        print(0)
+    else:
+        print(2 * (k - n))
 ```
 
 ---

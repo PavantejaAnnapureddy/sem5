@@ -55,11 +55,19 @@ Yes
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-16T15:55:19.792Z  
+**Submitted:** 2026-09-16T15:55:33.239Z  
 
 ```py
 # cook your dish here
-
+t = int(input())
+for _ in range(t):
+    n, k = map(int, input().split())
+    if k == n:
+        print("Yes")
+    elif k <= n - 2:
+        print("Yes")
+    else:
+        print("No")
 ```
 
 ---

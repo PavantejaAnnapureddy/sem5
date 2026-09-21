@@ -56,9 +56,9 @@ myCircularQueue.Rear();     // return 4
 ## Solution
 
 **Language:** Python  
-**Runtime:** 12 ms (beats 18.12%)  
-**Memory:** 19.8 MB (beats 86.90%)  
-**Submitted:** 2026-09-21T09:33:07.681Z  
+**Runtime:** 4 ms (beats 76.54%)  
+**Memory:** 19.8 MB (beats 98.21%)  
+**Submitted:** 2026-09-21T09:33:58.384Z  
 
 ```py
 class MyCircularQueue:

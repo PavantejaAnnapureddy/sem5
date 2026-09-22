@@ -54,65 +54,54 @@ myCircularDeque.getFront();     // return 4
 ## Solution
 
 **Language:** Python  
-**Runtime:** 8 ms (beats 46.42%)  
-**Memory:** 20.1 MB (beats 52.87%)  
-**Submitted:** 2026-09-22T09:55:20.431Z  
+**Runtime:** 5 ms (beats 66.50%)  
+**Memory:** 20 MB (beats 52.87%)  
+**Submitted:** 2026-09-22T09:58:30.213Z  
 
 ```py
+from collections import deque
+
 class MyCircularDeque:
 
     def __init__(self, k: int):
         self.k = k
-        self.deque = [0] * k
-        self.front = 0     
-        self.rear = 0       
-        self.size = 0      
+        self.q = deque()
 
     def insertFront(self, value: int) -> bool:
         if self.isFull():
             return False
-        self.front = (self.front - 1 + self.k) % self.k
-        self.deque[self.front] = value
-        self.size += 1
+        self.q.appendleft(value)
         return True
 
     def insertLast(self, value: int) -> bool:
         if self.isFull():
             return False
-        self.deque[self.rear] = value
-        self.rear = (self.rear + 1) % self.k
-        self.size += 1
+        self.q.append(value)
         return True
 
     def deleteFront(self) -> bool:
         if self.isEmpty():
             return False
-        self.front = (self.front + 1) % self.k
-        self.size -= 1
+        self.q.popleft()
         return True
 
     def deleteLast(self) -> bool:
         if self.isEmpty():
             return False
-        self.rear = (self.rear - 1 + self.k) % self.k
-        self.size -= 1
+        self.q.pop()
         return True
 
     def getFront(self) -> int:
-        if self.isEmpty():
-            return -1
-        return self.deque[self.front]
+        return -1 if self.isEmpty() else self.q[0]
 
     def getRear(self) -> int:
-        if self.isEmpty():
-            return -1
-        return self.deque[(self.rear - 1 + self.k) % self.k]
+        return -1 if self.isEmpty() else self.q[-1]
 
     def isEmpty(self) -> bool:
-        return self.size == 0
+        return len(self.q) == 0
 
     def isFull(self) -> bool:
-        return self.size == self.k
+        return len(self.q) == self.k
 ```
 
 ---

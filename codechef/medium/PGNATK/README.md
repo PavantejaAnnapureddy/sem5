@@ -66,11 +66,21 @@ Chef can work on minutes $1, 2, 4, 5, 7$ to put up the net; so the answer is $7$
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-23T15:20:23.853Z  
+**Submitted:** 2026-09-23T15:21:01.820Z  
 
 ```py
 # cook your dish here
-
+t = int(input())
+for _ in range(t):
+    n, k = map(int, input().split())
+    if n <= k - 1:
+        print(n)
+    else:
+        q, r = divmod(n, k - 1)
+        if r == 0:
+            print(q * k - 1)
+        else:
+            print(q * k + r)
 ```
 
 ---

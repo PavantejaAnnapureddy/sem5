@@ -82,7 +82,7 @@ It can be verified that for any $X \gt 4$, no choice of subarray can make the ar
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-23T15:30:10.841Z  
+**Submitted:** 2026-09-23T15:30:20.852Z  
 
 ```py
 # cook your dish here

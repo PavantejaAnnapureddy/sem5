@@ -58,11 +58,24 @@ Output
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-30T15:29:53.264Z  
+**Submitted:** 2026-09-30T15:30:08.619Z  
 
 ```py
 # cook your dish here
+from collections import Counter
 
+t = int(input())
+for _ in range(t):
+    n = int(input())
+    a = list(map(int, input().split()))
+    
+    freq = Counter()
+    for i in range(n):
+        v = a[i] - i  # using 0-indexed i, equivalent to a[i] - (i+1) + 1 = a[i] - i
+        freq[v] += 1
+    
+    max_match = max(freq.values())
+    print(n - max_match)
 ```
 
 ---

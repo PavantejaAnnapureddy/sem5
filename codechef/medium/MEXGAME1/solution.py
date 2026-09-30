@@ -1,4 +1,3 @@
-# cook your dish here
 from collections import Counter
 
 def solve(n, a):
@@ -6,13 +5,13 @@ def solve(n, a):
     m = 0
     while m in freq:
         m += 1
-    
-    total = 0
-    for val, cnt in freq.items():
-        if val > m:
-            total += cnt * (val - m - 1)
+    greater = sum(1 for x in a if x > m)
+    has_dup = False
     for v in range(1, m):
         if freq.get(v, 0) > 1:
-            total += (freq[v] - 1) * v
+            has_dup = True
+            break
     
-    return "Alice" if total % 2 else "Bob"
+    if greater % 2 == 1 or has_dup:
+        return "Alice"
+    return "Bob"

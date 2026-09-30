@@ -64,27 +64,43 @@ Alice
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-30T15:44:25.809Z  
+**Submitted:** 2026-09-30T15:46:02.360Z  
 
 ```py
-# cook your dish here
 from collections import Counter
+import sys
 
-def solve(n, a):
-    freq = Counter(a)
-    m = 0
-    while m in freq:
-        m += 1
+def solve():
+    input_data = sys.stdin.read().split()
+    idx = 0
+    t = int(input_data[idx]); idx += 1
+    results = []
     
-    total = 0
-    for val, cnt in freq.items():
-        if val > m:
-            total += cnt * (val - m - 1)
-    for v in range(1, m):
-        if freq.get(v, 0) > 1:
-            total += (freq[v] - 1) * v
+    for _ in range(t):
+        n = int(input_data[idx]); idx += 1
+        a = list(map(int, input_data[idx:idx+n]))
+        idx += n
+        
+        freq = Counter(a)
+        
+        m = 0
+        while m in freq:
+            m += 1
+        greater_count = sum(1 for x in a if x > m)
+        has_dup = False
+        for v in range(1, m):
+            if freq.get(v, 0) > 1:
+                has_dup = True
+                break
+        
+        if greater_count % 2 == 1 or has_dup:
+            results.append("Alice")
+        else:
+            results.append("Bob")
     
-    return "Alice" if total % 2 else "Bob"
+    print('\n'.join(results))
+
+solve()
 ```
 
 ---

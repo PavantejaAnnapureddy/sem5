@@ -17,14 +17,16 @@ def solve():
         m = 0
         while m in freq:
             m += 1
-        greater_count = sum(1 for x in a if x > m)
-        has_dup = False
+        
+        total = 0
+        for val, cnt in freq.items():
+            if val > m:
+                total += cnt * (val - m - 1)
         for v in range(1, m):
             if freq.get(v, 0) > 1:
-                has_dup = True
-                break
+                total += (freq[v] - 1) * v
         
-        if greater_count % 2 == 1 or has_dup:
+        if total % 2 == 1:
             results.append("Alice")
         else:
             results.append("Bob")

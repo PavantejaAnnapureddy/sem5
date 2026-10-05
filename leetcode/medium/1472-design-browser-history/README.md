@@ -52,9 +52,9 @@ browserHistory.back(7);                   // You are in "google.com", you can mo
 ## Solution
 
 **Language:** Python  
-**Runtime:** 40 ms (beats 46.68%)  
-**Memory:** 21.7 MB (beats 90.03%)  
-**Submitted:** 2026-10-05T10:08:46.805Z  
+**Runtime:** 41 ms (beats 44.75%)  
+**Memory:** 21.6 MB (beats 99.74%)  
+**Submitted:** 2026-10-05T10:09:43.992Z  
 
 ```py
 class BrowserHistory:

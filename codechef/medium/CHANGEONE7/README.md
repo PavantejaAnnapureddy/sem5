@@ -53,11 +53,22 @@ Output
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-14T16:14:16.975Z  
+**Submitted:** 2026-10-14T16:14:41.990Z  
 
 ```py
 # cook your dish here
-
+t = int(input())
+for _ in range(t):
+    n = int(input())
+    a = list(map(int, input().split()))
+    
+    if n == 2:
+        print(0)
+    else:
+        a.sort()
+        option1 = a[-1] - a[1]
+        option2 = a[-2] - a[0]
+        print(min(option1, option2))
 ```
 
 ---

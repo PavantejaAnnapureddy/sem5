@@ -58,11 +58,20 @@ Output
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-14T16:15:47.963Z  
+**Submitted:** 2026-10-14T16:16:00.099Z  
 
 ```py
 # cook your dish here
-
+t = int(input())
+for _ in range(t):
+    n, k = map(int, input().split())
+    a = list(map(int, input().split()))
+    
+    if k >= n - 1:
+        print(sum(a))
+    else:
+        a.sort(reverse=True)
+        print(sum(a[:k+1]))
 ```
 
 ---

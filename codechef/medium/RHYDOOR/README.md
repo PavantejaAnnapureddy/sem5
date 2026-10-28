@@ -66,11 +66,31 @@ BBBBAAAAABBBBBBB
 **Language:** Python  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-28T16:06:25.215Z  
+**Submitted:** 2026-10-28T16:06:39.672Z  
 
 ```py
 # cook your dish here
-
+t = int(input())
+for _ in range(t):
+    n = int(input())
+    s = input().strip()
+    
+    doors = 0
+    count = 0
+    prev = ''
+    
+    for ch in s:
+        if ch == prev:
+            count += 1
+        else:
+            count = 1
+            prev = ch
+        
+        if count == 3:
+            doors += 1
+            count = 0
+    
+    print(doors)
 ```
 
 ---
